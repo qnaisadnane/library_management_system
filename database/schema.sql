@@ -13,7 +13,7 @@ CREATE TABLE book (
     isbn VARCHAR(20) UNIQUE NOT NULL,
     title VARCHAR(255) NOT NULL,
     categories VARCHAR(255),
-    status VARCHAR(50),
+    status Enum('Available','Checked Out','Reserved','Under Maintenance') NOT NULL;
     publication_year DATETIME,
     number_available_copies INT NOT NULL,
     author_id INT NOT NULL,
