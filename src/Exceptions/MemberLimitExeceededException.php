@@ -4,4 +4,4 @@ namespace src\Exceptions;
 
 use Exception;
 
-class MemberLimitExeceededExeceededException extends Exception {}
+class MemberLimitExeceededException extends Exception {}
