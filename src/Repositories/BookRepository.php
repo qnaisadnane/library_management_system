@@ -14,13 +14,13 @@ Class BookRepository{
     }
 
     public function findById($id) :Book{
-        $this->db->prepare("Select * from book where id=?");
+        $this->db->prepare("SELECT * from book where id=?");
         $result = $this->db->execute([$id]);
         return $result->fetch(PDO::FETCH_ASSOC); 
     }
 
     public function findByTitle($title) :Book{
-        $this->db->prepare("Select * from book where title=:title");
+        $this->db->prepare("SELECT * from book where title=:title");
         $result = $this->db->execute([':title'=>$id]);
         return $result->fetch(PDO::FETCH_ASSOC); 
     }
@@ -31,7 +31,7 @@ Class BookRepository{
     }
 
     public function create($id) :array{
-        $this->db->prepare("Select * from book where id=:id");
+        $this->db->prepare("SELECT * from book where id=:id");
         $result = $this->db->execute([':id'=>$id]);
         return $result->fetch(PDO::FETCH_ASSOC); 
     }

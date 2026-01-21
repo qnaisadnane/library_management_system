@@ -1,6 +1,6 @@
 <?php
 
-namespace App\src\Models;
+namespace App\Models;
 
 class Author{
     private $id;
@@ -40,6 +40,27 @@ class Author{
     }
     public function getDeathDate(){
         return $this->death_date;
+    }
+    public function setId(int $id){
+        $this->id = $id;
+    }
+    public function setName(string $name):void{
+        $this->name = $name;
+    }
+    public function setBiography(string $biography){
+        $this->biography = $biography;
+    }
+    public function setNationality(string $nationality){
+        $this->nationality = $nationality;
+    }
+    public function setGenre(string $genre){
+        $this->genre = $genre;
+    }
+    public function setBirthDate(DateTime $birth_date){
+        return $this->birth_date = $birth_date;
+    }
+    public function setDeathDate(DateTime $death_date){
+        return $this->death_date = $death_date;
     }
 
 }

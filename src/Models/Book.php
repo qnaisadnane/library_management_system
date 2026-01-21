@@ -1,6 +1,6 @@
 <?php
 
-namespace App\src\Models;
+namespace App\Models;
 
 class Book{
     private $id;
@@ -10,8 +10,9 @@ class Book{
     private $status;
     private $publication_year;
     private $number_available_copies;
+    private array $authors;
 
-    function __construct($id , $isbn , $title , $categories ,$status ,$publication_year ,$number_available_copies){
+    function __construct($id , $isbn , $title , $categories ,$status='Available' ,$publication_year ,$number_available_copies){
         $this->id = $id;
         $this->isbn = $isbn;
         $this->title = $title;
@@ -19,6 +20,7 @@ class Book{
         $this->status = $status;
         $this->publication_year = $publication_year;
         $this->number_available_copies = $number_available_copies;
+        $this->authors = [];
     }
 
     public function getId(){
@@ -41,6 +43,28 @@ class Book{
     }
     public function getNumberAvailableCopies(){
         return $this->number_available_copies;
+    }
+    public function getAuthors(){
+        return $this->authors;
+    }
+    
+    public function setTitle(string $title):void{
+         $this->title = $title;
+    }
+    public function setCategories(string $categories):void{
+         $this->categories = $categories;
+    }
+    public function setStatus(string $status):void{
+         $this->status = $status;
+    }
+    public function setPublicationYear(int $publication_year):void{
+         $this->publication_year = $publication_year;
+    }
+    public function setNumberAvailableCopies( int $number_available_copies):void{
+         $this->number_available_copies = $number_available_copies;
+    }
+    public function addAuthor(Author $author):void{
+         $this->authors[] = $author;
     }
     
 }
