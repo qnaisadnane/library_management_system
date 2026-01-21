@@ -15,8 +15,8 @@ Class BookRepository{
 
     public function findById($id) :Book{
         $this->db->prepare("SELECT * from book where id=?");
-        $result = $this->db->execute([$id]);
-        return $result->fetch(PDO::FETCH_ASSOC); 
+        $stmt = $this->db->execute([$id]);
+       $data = $stmt->fetch(); 
     }
 
     public function findByTitle($title) :Book{
